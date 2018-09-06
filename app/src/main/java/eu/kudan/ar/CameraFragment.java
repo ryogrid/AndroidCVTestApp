@@ -347,6 +347,7 @@ public class CameraFragment extends Fragment implements SensorEventListener {
         mStatusLabel = (TextView) view.findViewById(R.id.status_label);
 
         mButton = (Button) view.findViewById(R.id.button);
+
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -455,11 +456,11 @@ public class CameraFragment extends Fragment implements SensorEventListener {
      */
     private void setupCameraDevice() {
 
-        // Check for camera permissions.
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            throw new RuntimeException("Camera permissions must be granted to function.");
-        }
+        // // Check for camera permissions.
+        // if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
+        //         != PackageManager.PERMISSION_GRANTED) {
+        //     throw new RuntimeException("Camera permissions must be granted to function.");
+        // }
 
         CameraManager manager = (CameraManager) getActivity().getSystemService(Context.CAMERA_SERVICE);
 
@@ -793,8 +794,8 @@ public class CameraFragment extends Fragment implements SensorEventListener {
             @Override
             public void run() {
 
-                mButton.setBackgroundColor(buttonColor);
-                mButton.setText(buttonText);
+//                mButton.setBackgroundColor(buttonColor);
+//                mButton.setText(buttonText);
 
                 mStatusLabel.setText(statusLabel);
                 mStatusLabel.setTextColor(buttonColor);
